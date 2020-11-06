@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Layout & Map</title>
+
+    <!--Milligram CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+    <!--CSS file-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--D3-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!--Topojson-->
+    <script src="https://unpkg.com/topojson@3"></script>
+
+    <!--JS file-->
+    <script defer src="main.js"></script>
+    
+  </head>
+  <body>
+    <h2 class="title">Airport Connections</h2>   
+    
+    <div class="radio">
+        <!--For radio buttons to switch between node and map-->
+        <div class="container">
+            <div class="row">
+              <input type="radio" id="force" name="type" value="force" checked>
+              <label for="force">Force</label>
+              <input type="radio" id="map" name="type" value="map">
+              <label for="map">Map</label>
+            </div>
+
+            <div class="row">
+              <div class="column">
+                <div id="tooltip" class="hidden"></div>
+                <div class="chart"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="tooltip"></div>
+    <div class="chart"></div>
+  </body>
+</html>
