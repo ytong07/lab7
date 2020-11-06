@@ -141,12 +141,24 @@ Promise.all([ // load multiple files
         else{
             // force layout
             // restart the simulation
-            force.restart();
+            link 
+                .transition()
+                .duration(600)
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+            node
+                .transition()
+                .duration(600)
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+
             node.on("mouseenter", (event, d) => {
                 const pos = d3.pointer(event, window);
                 // create tooltip
                 d3.select("#tooltip").style("opcity", 0)});
-
+    
             // set the map opacity to 0
             svg.selectAll("path")
                 .transition()
